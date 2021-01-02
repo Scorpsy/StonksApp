@@ -3,8 +3,10 @@ import datetime
 
 print('yfinance version = ' + yf.__version__)
 
-def yfinancetut(tickersymbol):
-    tickerdata = yf.Ticker(tickersymbol)
+
+def giveData(stockSymbol):
+
+    tickerdata = yf.Ticker(stockSymbol)
     tickerinfo = tickerdata.info
     investment = tickerinfo['shortName']
     print('Investment: ' + investment)
@@ -12,4 +14,21 @@ def yfinancetut(tickersymbol):
     today = datetime.datetime.today().isoformat()
     print('Today = ' + today)
 
-yfinancetut('TSLA')
+    tickerDF = tickerdata.history(period = '1m', start= '2020-12-1', end=today[:10])
+    #pricelast = tickerDF['Close'].iloc[-1]
+    #priceYest = tickerDF['Close'].iloc[-2]
+    #print(investment + ' price last = ' + str(pricelast))
+
+    #print(tickerDF)
+    return tickerDF
+
+
+def main():
+
+    symbol = input("Enter Symbol: ")
+
+    data = giveData(symbol)
+    print(data)
+
+if __name__ == '__main__':
+    main()
