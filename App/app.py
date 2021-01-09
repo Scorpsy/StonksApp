@@ -2,6 +2,9 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
+#TODO:
+#need to make either google extension or webpage
+
 @app.route('/')
 def hello():
     return render_template('picture.html')

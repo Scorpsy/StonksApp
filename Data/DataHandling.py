@@ -3,6 +3,10 @@ import datetime
 
 print('yfinance version = ' + yf.__version__)
 
+#TODO: 
+#need to know how to open window in desktop mode
+#Make an actual UI window
+
 def giveData(stockSymbol):
 
     tickerdata = yf.Ticker(stockSymbol)
@@ -23,7 +27,6 @@ def firstPage():
     tsla = 'tsla'
     qcom = 'qcom'
     amd = 'amd'
-
 
 #Use Python3 for command prompt
 #iloc used to get range of data 
