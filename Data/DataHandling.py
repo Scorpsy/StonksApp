@@ -8,13 +8,10 @@ def giveData(stockSymbol):
     tickerdata = yf.Ticker(stockSymbol)
     tickerinfo = tickerdata.info
     investment = tickerinfo['shortName']
-    #print('Investment: ' + investment)
 
     today = datetime.datetime.today().isoformat()
-    #print('Today = ' + today)
 
     tickerDF = tickerdata.history(period = '1mo')
-    #pricelast = tickerDF['Close'].iloc[-1]
     #priceYest = tickerDF['Close'].iloc[-2]
     #print(investment + ' price last = ' + str(pricelast))
     
@@ -40,7 +37,6 @@ def main():
     print('Today = ' + today)
 
     pricelast = data['Close']
-
 
     #print(data)
     print(pricelast)
