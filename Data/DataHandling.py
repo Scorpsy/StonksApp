@@ -6,6 +6,7 @@ print('yfinance version = ' + yf.__version__)
 #TODO: 
 #need to know how to open window in desktop mode
 #Make an actual UI window
+#need to finish all functions
 
 def giveData(stockSymbol):
 
